@@ -4,12 +4,17 @@ Find the missing letter in the passed letter range and return it.
 If all letters are present in the range, return undefined.*/
 
 function fearNotLetter(str) {
-  const start = str.charCodeAt();
-  const end = str.charCodeAt(str.length-1);
-  return end-start === str.length ?                         
-    String.fromCharCode(str.split('').map(e=>e.charCodeAt()).find((e, i) => e != start+i)-1) : 
-    undefined;
+  const l = str.split('').map(e=>e.charCodeAt()).find((e, i, a) => e != a[0]+i);
+  return l ? String.fromCharCode(l-1) : l; 
 }
+
+// function fearNotLetter(str) {
+//   const start = str.charCodeAt();
+//   const end = str.charCodeAt(str.length-1);
+//   return end-start === str.length ?                         
+//     String.fromCharCode(str.split('').map(e=>e.charCodeAt()).find((e, i) => e != start+i)-1) : 
+//     undefined;
+// }
   /* I find this hard to read
 function fearNotLetter(str) {
   const first = str.charCodeAt();
