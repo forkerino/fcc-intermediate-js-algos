@@ -22,3 +22,7 @@ function sumFibs(num) {
 
   return sum;
 }
+
+// Recursive version:
+
+const sumFibs = (n,p=0,c=1,s=0) => c > n ? s : sumFibs(n,c,p+c,s+(c%2&&c));
