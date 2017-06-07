@@ -5,6 +5,10 @@ of the source object has to be present in the object from the collection if it i
 the returned array.*/
 
 function whatIsInAName(collection, source) {
+  return collection.filter(obj => Object.keys(source).every(k => obj[k] === source[k]));
+}
+
+function whatIsInAName(collection, source) {
   return collection.filter(function(obj){
     for (var prop in source) {
       if (!(obj.hasOwnProperty(prop) && obj[prop] === source[prop])) return false;
