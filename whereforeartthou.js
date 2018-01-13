@@ -17,4 +17,4 @@ function whatIsInAName(collection, source) {
   }); 
 }  
 
-const whatIsInAName = (coll, src) => coll.filter(obj => Object.keys(src).every(key => obj[k] === src[k]))
+const whatIsInAName = (coll, src) => coll.filter(obj => Object.keys(src).every(k => obj[k] === src[k]))
